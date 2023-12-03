@@ -21,7 +21,6 @@ struct VehicleInfo: View {
        ZStack{
            Color ("ColorRec 1") .edgesIgnoringSafeArea(.all)
        VStack {
-
                    Text("Vehicle Info")
                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                        .padding(.trailing,220)

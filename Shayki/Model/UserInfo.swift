@@ -14,7 +14,6 @@ struct CarInfo {
         case sixCylinder = 6
         case eightCylinder = 8
     }
-
     var numberOfCylinders: EngineType
     var odometerReading: Int
     var dailyKilometersDriven: Int
