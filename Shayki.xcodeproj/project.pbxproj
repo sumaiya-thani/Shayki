@@ -7,18 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104BFC572B1B116700E643D4 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 104BFC562B1B116700E643D4 /* giphy.gif */; };
+		104BFC5B2B1B142C00E643D4 /* logo2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 104BFC5A2B1B142C00E643D4 /* logo2.gif */; };
+		104BFC5D2B1B161C00E643D4 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BFC5C2B1B161C00E643D4 /* SplashScreen.swift */; };
+		10D019402B1B2E52003E7305 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D0193F2B1B2E52003E7305 /* Reminders.swift */; };
 		10F66E232B1A1FFC0015A03F /* ShaykiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E222B1A1FFC0015A03F /* ShaykiApp.swift */; };
 		10F66E252B1A1FFC0015A03F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E242B1A1FFC0015A03F /* ContentView.swift */; };
 		10F66E272B1A1FFE0015A03F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F66E262B1A1FFE0015A03F /* Assets.xcassets */; };
 		10F66E2A2B1A1FFE0015A03F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F66E292B1A1FFE0015A03F /* Preview Assets.xcassets */; };
+		10F66E3F2B1A26CA0015A03F /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E3E2B1A26CA0015A03F /* MainScreen.swift */; };
+		10F66E412B1A284D0015A03F /* CustomReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E402B1A284D0015A03F /* CustomReminder.swift */; };
+		10F66E432B1A28550015A03F /* VehicleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E422B1A28550015A03F /* VehicleInfo.swift */; };
+		10F66E452B1A285A0015A03F /* RoutineMaintenance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E442B1A285A0015A03F /* RoutineMaintenance.swift */; };
+		10F66E472B1A28650015A03F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E462B1A28650015A03F /* Card.swift */; };
+		10F66E492B1A286C0015A03F /* CarWash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E482B1A286C0015A03F /* CarWash.swift */; };
+		10F66E4B2B1A28720015A03F /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E4A2B1A28720015A03F /* LicenseView.swift */; };
+		10F66E522B1A29660015A03F /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E512B1A29660015A03F /* Dialog.swift */; };
+		10F66E562B1A34130015A03F /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E552B1A34130015A03F /* HomeScreen.swift */; };
+		10F66E592B1A49840015A03F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E582B1A49840015A03F /* UserInfo.swift */; };
+		10F66E602B1A502F0015A03F /* InAppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E5F2B1A502F0015A03F /* InAppNotification.swift */; };
+		10F66E622B1A50EA0015A03F /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E612B1A50EA0015A03F /* LocalNotifications.swift */; };
+		DA6B5DE0798191FD91902C75 /* Pods_Shayki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399EE2BDC750A8E6067FAAC /* Pods_Shayki.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0399EE2BDC750A8E6067FAAC /* Pods_Shayki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shayki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		104BFC562B1B116700E643D4 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
+		104BFC5A2B1B142C00E643D4 /* logo2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo2.gif; sourceTree = "<group>"; };
+		104BFC5C2B1B161C00E643D4 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		10D0193F2B1B2E52003E7305 /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
 		10F66E1F2B1A1FFC0015A03F /* Shayki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shayki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F66E222B1A1FFC0015A03F /* ShaykiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaykiApp.swift; sourceTree = "<group>"; };
 		10F66E242B1A1FFC0015A03F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		10F66E262B1A1FFE0015A03F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10F66E292B1A1FFE0015A03F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		10F66E3E2B1A26CA0015A03F /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		10F66E402B1A284D0015A03F /* CustomReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReminder.swift; sourceTree = "<group>"; };
+		10F66E422B1A28550015A03F /* VehicleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleInfo.swift; sourceTree = "<group>"; };
+		10F66E442B1A285A0015A03F /* RoutineMaintenance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineMaintenance.swift; sourceTree = "<group>"; };
+		10F66E462B1A28650015A03F /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		10F66E482B1A286C0015A03F /* CarWash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarWash.swift; sourceTree = "<group>"; };
+		10F66E4A2B1A28720015A03F /* LicenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
+		10F66E512B1A29660015A03F /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
+		10F66E552B1A34130015A03F /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		10F66E582B1A49840015A03F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		10F66E5F2B1A502F0015A03F /* InAppNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppNotification.swift; sourceTree = "<group>"; };
+		10F66E612B1A50EA0015A03F /* LocalNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		55E61BFDAAA5DD8330AA86B8 /* Pods-Shayki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shayki.debug.xcconfig"; path = "Target Support Files/Pods-Shayki/Pods-Shayki.debug.xcconfig"; sourceTree = "<group>"; };
+		8746F2A62111E24BE0AF310E /* Pods-Shayki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shayki.release.xcconfig"; path = "Target Support Files/Pods-Shayki/Pods-Shayki.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6B5DE0798191FD91902C75 /* Pods_Shayki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +74,8 @@
 			children = (
 				10F66E212B1A1FFC0015A03F /* Shayki */,
 				10F66E202B1A1FFC0015A03F /* Products */,
+				3294C6051B26A105B5277FFB /* Pods */,
+				FB9CA7C780EF7001E7D2F739 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +90,11 @@
 		10F66E212B1A1FFC0015A03F /* Shayki */ = {
 			isa = PBXGroup;
 			children = (
+				10F66E572B1A496A0015A03F /* Model */,
+				10F66E5A2B1A4D910015A03F /* Notification */,
+				10F66E502B1A29550015A03F /* Dialog */,
+				10F66E3D2B1A26B00015A03F /* Widget */,
+				10F66E3A2B1A23CC0015A03F /* Screen */,
 				10F66E222B1A1FFC0015A03F /* ShaykiApp.swift */,
 				10F66E242B1A1FFC0015A03F /* ContentView.swift */,
 				10F66E262B1A1FFE0015A03F /* Assets.xcassets */,
@@ -62,9 +106,77 @@
 		10F66E282B1A1FFE0015A03F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				104BFC5A2B1B142C00E643D4 /* logo2.gif */,
+				104BFC562B1B116700E643D4 /* giphy.gif */,
 				10F66E292B1A1FFE0015A03F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		10F66E3A2B1A23CC0015A03F /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				10F66E4A2B1A28720015A03F /* LicenseView.swift */,
+				10F66E482B1A286C0015A03F /* CarWash.swift */,
+				10F66E442B1A285A0015A03F /* RoutineMaintenance.swift */,
+				10F66E422B1A28550015A03F /* VehicleInfo.swift */,
+				10F66E402B1A284D0015A03F /* CustomReminder.swift */,
+				10F66E3E2B1A26CA0015A03F /* MainScreen.swift */,
+				10F66E552B1A34130015A03F /* HomeScreen.swift */,
+				104BFC5C2B1B161C00E643D4 /* SplashScreen.swift */,
+				10D0193F2B1B2E52003E7305 /* Reminders.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		10F66E3D2B1A26B00015A03F /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				10F66E462B1A28650015A03F /* Card.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		10F66E502B1A29550015A03F /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				10F66E512B1A29660015A03F /* Dialog.swift */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		10F66E572B1A496A0015A03F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10F66E582B1A49840015A03F /* UserInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10F66E5A2B1A4D910015A03F /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				10F66E612B1A50EA0015A03F /* LocalNotifications.swift */,
+				10F66E5F2B1A502F0015A03F /* InAppNotification.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		3294C6051B26A105B5277FFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55E61BFDAAA5DD8330AA86B8 /* Pods-Shayki.debug.xcconfig */,
+				8746F2A62111E24BE0AF310E /* Pods-Shayki.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB9CA7C780EF7001E7D2F739 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0399EE2BDC750A8E6067FAAC /* Pods_Shayki.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10F66E2D2B1A1FFE0015A03F /* Build configuration list for PBXNativeTarget "Shayki" */;
 			buildPhases = (
+				F1A03640E38B88BFAA83474B /* [CP] Check Pods Manifest.lock */,
 				10F66E1B2B1A1FFC0015A03F /* Sources */,
 				10F66E1C2B1A1FFC0015A03F /* Frameworks */,
 				10F66E1D2B1A1FFC0015A03F /* Resources */,
+				79278DC735D6FFFA19BA79FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,18 +239,76 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104BFC5B2B1B142C00E643D4 /* logo2.gif in Resources */,
 				10F66E2A2B1A1FFE0015A03F /* Preview Assets.xcassets in Resources */,
+				104BFC572B1B116700E643D4 /* giphy.gif in Resources */,
 				10F66E272B1A1FFE0015A03F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		79278DC735D6FFFA19BA79FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shayki/Pods-Shayki-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shayki/Pods-Shayki-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shayki/Pods-Shayki-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1A03640E38B88BFAA83474B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shayki-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		10F66E1B2B1A1FFC0015A03F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F66E412B1A284D0015A03F /* CustomReminder.swift in Sources */,
+				10F66E522B1A29660015A03F /* Dialog.swift in Sources */,
+				10D019402B1B2E52003E7305 /* Reminders.swift in Sources */,
+				10F66E492B1A286C0015A03F /* CarWash.swift in Sources */,
+				10F66E432B1A28550015A03F /* VehicleInfo.swift in Sources */,
+				104BFC5D2B1B161C00E643D4 /* SplashScreen.swift in Sources */,
+				10F66E592B1A49840015A03F /* UserInfo.swift in Sources */,
+				10F66E472B1A28650015A03F /* Card.swift in Sources */,
+				10F66E4B2B1A28720015A03F /* LicenseView.swift in Sources */,
+				10F66E452B1A285A0015A03F /* RoutineMaintenance.swift in Sources */,
+				10F66E622B1A50EA0015A03F /* LocalNotifications.swift in Sources */,
+				10F66E562B1A34130015A03F /* HomeScreen.swift in Sources */,
+				10F66E3F2B1A26CA0015A03F /* MainScreen.swift in Sources */,
+				10F66E602B1A502F0015A03F /* InAppNotification.swift in Sources */,
 				10F66E252B1A1FFC0015A03F /* ContentView.swift in Sources */,
 				10F66E232B1A1FFC0015A03F /* ShaykiApp.swift in Sources */,
 			);
@@ -182,7 +354,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -245,7 +417,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -266,6 +438,7 @@
 		};
 		10F66E2E2B1A1FFE0015A03F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55E61BFDAAA5DD8330AA86B8 /* Pods-Shayki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +468,7 @@
 		};
 		10F66E2F2B1A1FFE0015A03F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8746F2A62111E24BE0AF310E /* Pods-Shayki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
