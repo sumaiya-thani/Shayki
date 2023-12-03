@@ -27,6 +27,10 @@
 		10F66E592B1A49840015A03F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E582B1A49840015A03F /* UserInfo.swift */; };
 		10F66E602B1A502F0015A03F /* InAppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E5F2B1A502F0015A03F /* InAppNotification.swift */; };
 		10F66E622B1A50EA0015A03F /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F66E612B1A50EA0015A03F /* LocalNotifications.swift */; };
+		A23ED35F2B1C704F0010B5F4 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23ED35E2B1C704F0010B5F4 /* SelectButton.swift */; };
+		A23ED3612B1C70690010B5F4 /* SelectButton1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23ED3602B1C70690010B5F4 /* SelectButton1.swift */; };
+		A23ED3632B1C70740010B5F4 /* SelectButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23ED3622B1C70740010B5F4 /* SelectButton2.swift */; };
+		A23ED3652B1C707D0010B5F4 /* SelectButton3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23ED3642B1C707D0010B5F4 /* SelectButton3.swift */; };
 		DA6B5DE0798191FD91902C75 /* Pods_Shayki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399EE2BDC750A8E6067FAAC /* Pods_Shayki.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +59,10 @@
 		10F66E612B1A50EA0015A03F /* LocalNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		55E61BFDAAA5DD8330AA86B8 /* Pods-Shayki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shayki.debug.xcconfig"; path = "Target Support Files/Pods-Shayki/Pods-Shayki.debug.xcconfig"; sourceTree = "<group>"; };
 		8746F2A62111E24BE0AF310E /* Pods-Shayki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shayki.release.xcconfig"; path = "Target Support Files/Pods-Shayki/Pods-Shayki.release.xcconfig"; sourceTree = "<group>"; };
+		A23ED35E2B1C704F0010B5F4 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
+		A23ED3602B1C70690010B5F4 /* SelectButton1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton1.swift; sourceTree = "<group>"; };
+		A23ED3622B1C70740010B5F4 /* SelectButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton2.swift; sourceTree = "<group>"; };
+		A23ED3642B1C707D0010B5F4 /* SelectButton3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				10F66E4A2B1A28720015A03F /* LicenseView.swift */,
+				A23ED35E2B1C704F0010B5F4 /* SelectButton.swift */,
 				10F66E482B1A286C0015A03F /* CarWash.swift */,
 				10F66E442B1A285A0015A03F /* RoutineMaintenance.swift */,
 				10F66E422B1A28550015A03F /* VehicleInfo.swift */,
@@ -125,6 +134,9 @@
 				10F66E552B1A34130015A03F /* HomeScreen.swift */,
 				104BFC5C2B1B161C00E643D4 /* SplashScreen.swift */,
 				10D0193F2B1B2E52003E7305 /* Reminders.swift */,
+				A23ED3602B1C70690010B5F4 /* SelectButton1.swift */,
+				A23ED3622B1C70740010B5F4 /* SelectButton2.swift */,
+				A23ED3642B1C707D0010B5F4 /* SelectButton3.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -296,11 +308,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				10F66E412B1A284D0015A03F /* CustomReminder.swift in Sources */,
+				A23ED3632B1C70740010B5F4 /* SelectButton2.swift in Sources */,
 				10F66E522B1A29660015A03F /* Dialog.swift in Sources */,
 				10D019402B1B2E52003E7305 /* Reminders.swift in Sources */,
 				10F66E492B1A286C0015A03F /* CarWash.swift in Sources */,
 				10F66E432B1A28550015A03F /* VehicleInfo.swift in Sources */,
+				A23ED35F2B1C704F0010B5F4 /* SelectButton.swift in Sources */,
 				104BFC5D2B1B161C00E643D4 /* SplashScreen.swift in Sources */,
+				A23ED3612B1C70690010B5F4 /* SelectButton1.swift in Sources */,
+				A23ED3652B1C707D0010B5F4 /* SelectButton3.swift in Sources */,
 				10F66E592B1A49840015A03F /* UserInfo.swift in Sources */,
 				10F66E472B1A28650015A03F /* Card.swift in Sources */,
 				10F66E4B2B1A28720015A03F /* LicenseView.swift in Sources */,

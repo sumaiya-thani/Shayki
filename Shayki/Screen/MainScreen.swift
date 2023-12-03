@@ -29,12 +29,9 @@ struct MainScreen: View {
     @State private var isVisible = true
     
     var body: some View {
-       
         NavigationView {
-        
             VStack{
-                
-                ScrollView{
+//                ScrollView{
                     ZStack{
                         Color("Color")
                             .ignoresSafeArea()
@@ -43,11 +40,8 @@ struct MainScreen: View {
                             .padding(.bottom,-170)
                             .frame(width: 400,height: 700)
                             .offset(x: 0, y: 80)
-                        
-                        
-                        
                         VStack {
-                          
+                            
                         }  .toolbar {
                             ToolbarItem(placement: .navigationBarLeading) {
                                 NavigationLink(destination: Reminders()) {
@@ -55,7 +49,6 @@ struct MainScreen: View {
                                         .foregroundColor(.white)
                                 }
                             }
-
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 NavigationLink(destination: Reminders()) {
                                     Image(systemName: "gearshape.fill")
@@ -68,250 +61,252 @@ struct MainScreen: View {
                         HStack{
                             Text("Tesla Model X").font(.title3)
                                 .fontWeight(.bold)
-                            
                                 .foregroundColor(.white)
                             Image(systemName: "pencil")
                                 .foregroundColor(.white)
                                 .font(.title3)
                                 .fontWeight(.bold)
                             
-                        }.padding(.bottom,730)
-                        
-                        
-                        
-                        
+                        }.padding(.bottom,770)
                         
                         Image("imageCar")
-                        
+                            .resizable()
+                            .frame(width: 260, height: 150, alignment: .center)
                             .shadow(radius: 20)
                             .padding(.bottom,575)
-                        
                         VStack{
-                            SiriTipView(intent: StartAppIntent(), isVisible: $isVisible).frame(width: 340) .siriTipViewStyle(.automatic).padding(.bottom, 3.0)
-                            HStack(){
+                            ScrollView{
                                 
-                                VStack(){
-                                    Text(dailyKilometersInput)
-                                    
-                                        .font(.title)
-                                        .fontWeight(.medium)
-                                        .padding(.bottom, 2.0)
-                                    
-                                    
-                                    
-                                    Text("Km")
-                                    
-                                        .font(.title3)
-                                        .fontWeight(.medium)
-                                        .padding(.top, 20.0)
-                                    
-                                    
-                                    
-                                }.padding(.leading, 37.0)
-                                Spacer()
-                                VStack(alignment: .center){
-                                    Text("40")
-                                        .font(.title)
-                                        .fontWeight(.medium)
-                                        .padding(.bottom, 2.0)
-                                    
-                                    Text("Average \nHour")
-                                    
-                                        .font(.title3)
-                                        .fontWeight(.medium)
-                                    
-                                    
-                                }.padding(.trailing, 30.0)
-                                
-                                
-                                
-                                
-                                
-                            }.multilineTextAlignment(.center)
-                                .frame(width: 347, height: 132)
-                                .foregroundColor(.white)
-                                .background(Color("Color"))
-                                .cornerRadius(16)
-                                .shadow(radius: 10)
-                            VStack(alignment:.leading){
-                                HStack{
-                                    
-                                    Button(action: {
-                                        showingSheet1.toggle()
-                                    }) {
-                                        VStack {
-                                            
-                                            Text("Vehicle"+" "+"Insurance")
-                                            
-                                                .font(.system(size: 14))
-                                            
-                                                .fontWeight(.bold)
-                                                .padding(.horizontal, 7.0)
-                                            Text("20")
+                                VStack{
+                                    SiriTipView(intent: StartAppIntent(), isVisible: $isVisible).frame(width: 340) .siriTipViewStyle(.automatic).padding(.bottom, 3.0)
+                                    HStack(){
+                                        
+                                        VStack(){
+                                            Text(dailyKilometersInput)
                                             
                                                 .font(.title)
-                                                .fontWeight(.bold)
-                                                .padding(.top, 1.0)
-                                            Text("Days Left")
+                                                .fontWeight(.medium)
+                                                .padding(.bottom, 2.0)
+                                            
+                                            
+                                            
+                                            Text("Km")
                                             
                                                 .font(.title3)
                                                 .fontWeight(.medium)
-                                                .padding(.top, -9.0)
-                                                .foregroundColor(Color.gray)
+                                                .padding(.top, 20.0)
                                             
                                             
-                                        }
-                                        .frame(width: 164, height: 132)
-                                        .foregroundColor(.white)
-                                        .background(Color("Color"))
-                                        .clipShape(RoundedRectangle(cornerRadius: 16.0))
-                                        .padding(.all, 8.0)
-                                        .shadow(radius: 10)
-                                    }
-                                    .sheet(isPresented: $showingSheet1) {
-                                        VehicleInfo()
+                                            
+                                        }.padding(.leading, 37.0)
+                                        Spacer()
+                                        VStack(alignment: .center){
+                                            Text("40")
+                                                .font(.title)
+                                                .fontWeight(.medium)
+                                                .padding(.bottom, 2.0)
+                                            
+                                            Text("Average \nHour")
+                                            
+                                                .font(.title3)
+                                                .fontWeight(.medium)
+                                            
+                                            
+                                        }.padding(.trailing, 30.0)
                                         
-                                    }
-                                    
-                                    
-                                    Dialog()
-                                    
-                                    
-                                }
-                                
-                                
-                                HStack{
-                                    
-                                    
-                                    Button(action: {
-                                        showingSheet2.toggle()
-                                    }) {
-                                        VStack {
-                                            Text("License"+" "+"Expiration")
-                                                .padding(.bottom,14.0)
-                                                .font(.system(size: 14))
-                                                .fontWeight(.bold)
-                                            
-                                            Image(systemName: "person.text.rectangle")
-                                                .font(.system(size: 48))
-                                        }
-                                        .frame(width: 164, height: 132)
+                                        
+                                        
+                                        
+                                        
+                                    }.multilineTextAlignment(.center)
+                                        .frame(width: 347, height: 132)
                                         .foregroundColor(.white)
                                         .background(Color("Color"))
-                                        .clipShape(RoundedRectangle(cornerRadius: 16.0))
-                                        .padding(.all, 8.0)
+                                        .cornerRadius(16)
                                         .shadow(radius: 10)
-                                    }
-                                    .sheet(isPresented: $showingSheet2) {
-                                        LicenseView()
-                                    }
-                                    
-                                    
-                                    Button(action: {
-                                        showingSheet3.toggle()
-                                    }) {
-                                        VStack {
-                                            Text("Regular Upkeepe")
-                                                .padding()
-                                                .font(.system(size: 14))
-                                                .fontWeight(.bold)
+                                    VStack(alignment:.leading){
+                                        HStack{
                                             
-                                            Image(systemName: "gearshape.2")
-                                                .font(.system(size: 48))
-                                        }
-                                        .frame(width: 164, height: 132)
-                                        .foregroundColor(.white)
-                                        .background(Color("Color"))
-                                        .clipShape(RoundedRectangle(cornerRadius: 16.0))
-                                        .padding(.all, 8.0)
-                                        .shadow(radius: 10)
-                                    }
-                                    .sheet(isPresented: $showingSheet3) {
-                                        RoutineMaintenance()
-                                    }
-                                    
-                                    
-                                    
-                                }
-                                HStack{
-                                    Button(action: {
-                                        showingSheet4.toggle()
-                                    }) {
-                                        VStack(alignment: .center) {
-                                            Text("Car Wash")
-                                                .padding()
+                                            Button(action: {
+                                                showingSheet1.toggle()
+                                            }) {
+                                                VStack {
+                                                    
+                                                    Text("Vehicle"+" "+"Insurance")
+                                                    
+                                                        .font(.system(size: 14))
+                                                    
+                                                        .fontWeight(.bold)
+                                                        .padding(.horizontal, 7.0)
+                                                    Text("20")
+                                                    
+                                                        .font(.title)
+                                                        .fontWeight(.bold)
+                                                        .padding(.top, 1.0)
+                                                    Text("Days Left")
+                                                    
+                                                        .font(.title3)
+                                                        .fontWeight(.medium)
+                                                        .padding(.top, -9.0)
+                                                        .foregroundColor(Color.gray)
+                                                    
+                                                    
+                                                }
+                                                .frame(width: 164, height: 132)
+                                                .foregroundColor(.white)
+                                                .background(Color("Color"))
+                                                .clipShape(RoundedRectangle(cornerRadius: 16.0))
+                                                .padding(.all, 8.0)
+                                                .shadow(radius: 10)
+                                            }
+                                            .sheet(isPresented: $showingSheet1) {
+                                                VehicleInfo()
+                                                
+                                            }
                                             
-                                                .font(.system(size: 14))
-                                                .fontWeight(.bold)
                                             
-                                            Image(systemName: "car.side")
-                                                .font(.system(size: 48))
+                                            Dialog()
+                                            
+                                            
                                         }
                                         
-                                        .frame(width: 164, height: 132)
-                                        .foregroundColor(.white)
-                                        .background(Color("Color"))
-                                        .clipShape(RoundedRectangle(cornerRadius: 16.0))
-                                        .padding(.all, 8.0)
-                                        .shadow(radius: 10)
-                                    }
-                                    .sheet(isPresented: $showingSheet4) {
-                                        CarWash()
-                                    }
-                                    
-                                    Image(systemName: "plus.circle.fill")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                        .frame(width: 164, height: 132)
-                                        .foregroundColor(.white)
-                                        .background(Color("Color"))
-                                        .clipShape(RoundedRectangle(cornerRadius: 16.0))
-                                        .padding(.all, 8.0)
-                                        .shadow(radius: 10)
-                                }
-                                HStack{
-                                    Button(action: {
-                                        showingSheet4.toggle()
-                                    }) {
-                                        VStack(alignment: .center) {
-                                            Text("Car Wash")
-                                                .padding()
+                                        
+                                        HStack{
                                             
-                                                .font(.system(size: 14))
-                                                .fontWeight(.bold)
                                             
-                                            Image(systemName: "car.side")
-                                                .font(.system(size: 48))
+                                            Button(action: {
+                                                showingSheet2.toggle()
+                                            }) {
+                                                VStack {
+                                                    Text("License"+" "+"Expiration")
+                                                        .padding(.bottom,14.0)
+                                                        .font(.system(size: 14))
+                                                        .fontWeight(.bold)
+                                                    
+                                                    Image(systemName: "person.text.rectangle")
+                                                        .font(.system(size: 48))
+                                                }
+                                                .frame(width: 164, height: 132)
+                                                .foregroundColor(.white)
+                                                .background(Color("Color"))
+                                                .clipShape(RoundedRectangle(cornerRadius: 16.0))
+                                                .padding(.all, 8.0)
+                                                .shadow(radius: 10)
+                                            }
+                                            .sheet(isPresented: $showingSheet2) {
+                                                LicenseView()
+                                            }
+                                            
+                                            
+                                            Button(action: {
+                                                showingSheet3.toggle()
+                                            }) {
+                                                VStack {
+                                                    Text("Regular Upkeepe")
+                                                        .padding()
+                                                        .font(.system(size: 14))
+                                                        .fontWeight(.bold)
+                                                    
+                                                    Image(systemName: "gearshape.2")
+                                                        .font(.system(size: 48))
+                                                }
+                                                .frame(width: 164, height: 132)
+                                                .foregroundColor(.white)
+                                                .background(Color("Color"))
+                                                .clipShape(RoundedRectangle(cornerRadius: 16.0))
+                                                .padding(.all, 8.0)
+                                                .shadow(radius: 10)
+                                            }
+                                            .sheet(isPresented: $showingSheet3) {
+                                                RoutineMaintenance()
+                                            }
+                                            
+                                            
+                                            
+                                        }
+                                        HStack{
+                                            Button(action: {
+                                                showingSheet4.toggle()
+                                            }) {
+                                                VStack(alignment: .center) {
+                                                    Text("Car Wash")
+                                                        .padding()
+                                                    
+                                                        .font(.system(size: 14))
+                                                        .fontWeight(.bold)
+                                                    
+                                                    Image(systemName: "car.side")
+                                                        .font(.system(size: 48))
+                                                }
+                                                
+                                                .frame(width: 164, height: 132)
+                                                .foregroundColor(.white)
+                                                .background(Color("Color"))
+                                                .clipShape(RoundedRectangle(cornerRadius: 16.0))
+                                                .padding(.all, 8.0)
+                                                .shadow(radius: 10)
+                                            }
+                                            .sheet(isPresented: $showingSheet4) {
+                                                CarWash()
+                                            }
+                                            
+                                            Image(systemName: "plus.circle.fill")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .frame(width: 164, height: 132)
+                                                .foregroundColor(.white)
+                                                .background(Color("Color"))
+                                                .clipShape(RoundedRectangle(cornerRadius: 16.0))
+                                                .padding(.all, 8.0)
+                                                .shadow(radius: 10)
+                                        }
+                                        HStack{
+                                            Button(action: {
+                                                showingSheet4.toggle()
+                                            }) {
+                                                VStack(alignment: .center) {
+                                                    Text("Car Wash")
+                                                        .padding()
+                                                    
+                                                        .font(.system(size: 14))
+                                                        .fontWeight(.bold)
+                                                    
+                                                    Image(systemName: "car.side")
+                                                        .font(.system(size: 48))
+                                                }
+                                                
+                                                .frame(width: 164, height: 132)
+                                                .foregroundColor(.white)
+                                                .background(Color("Color"))
+                                                .clipShape(RoundedRectangle(cornerRadius: 16.0))
+                                                .padding(.all, 8.0)
+                                                .shadow(radius: 10)
+                                            }
+                                            .sheet(isPresented: $showingSheet4) {
+                                                CarWash()
+                                            }
+                                            
+                                            Image(systemName: "plus.circle.fill")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .frame(width: 164, height: 132)
+                                                .foregroundColor(.white)
+                                                .background(Color("Color"))
+                                                .clipShape(RoundedRectangle(cornerRadius: 16.0))
+                                                .padding(.all, 8.0)
+                                                .shadow(radius: 10)
                                         }
                                         
-                                        .frame(width: 164, height: 132)
-                                        .foregroundColor(.white)
-                                        .background(Color("Color"))
-                                        .clipShape(RoundedRectangle(cornerRadius: 16.0))
-                                        .padding(.all, 8.0)
-                                        .shadow(radius: 10)
                                     }
-                                    .sheet(isPresented: $showingSheet4) {
-                                        CarWash()
-                                    }
-                                    
-                                    Image(systemName: "plus.circle.fill")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                        .frame(width: 164, height: 132)
-                                        .foregroundColor(.white)
-                                        .background(Color("Color"))
-                                        .clipShape(RoundedRectangle(cornerRadius: 16.0))
-                                        .padding(.all, 8.0)
-                                        .shadow(radius: 10)
                                 }
+                                //                        .offset(x: 0, y: 80)
+                                //                        .padding(.bottom,-200.0)
                                 
-                            }
-                        }
-                        .offset(x: 0, y: 80)
-                        .padding(.bottom,-200.0)
+                            }.padding(.top,150.0)
+                        }.padding(.top,8)
                     }
-                }
+                    
+//                }
                 
                 
                 

@@ -8,177 +8,168 @@
 import SwiftUI
 
 struct RoutineMaintenance: View {
+    @State private var isSelected1 = false
+           @State private var isSelected2 = false
+           @State private var isSelected3 = false
+       
+          @State private var isSelected4 = false
+          @State private var isSelected5 = false
+          @State private var isSelected6 = false
           @State var toggle = false
-      
-      @State var selectedDate = Date()
-      @Environment(\.presentationMode) var presentationMode
-      var body: some View {
-          VStack {
-              NavigationView {
-                  ZStack{
-                      Color("ColorRec 1")
-                          .ignoresSafeArea(.all)
-                      VStack{
-                          Text("  Choose reminder type")
-                              .fontWeight(.regular)
-                              .foregroundColor(Color.white)
-                              .multilineTextAlignment(.leading)
-                              .padding([.trailing],200.0)
-                          
-                          HStack{
-                              Button(action: {}) {
-                                  Text("Tire Rotation")
-                                      .font(.callout)
-                                      .padding(9)
-                                      .foregroundColor(.white)
-                                      .background(Color("Color"))
-                                      .cornerRadius(16)
-                                  //                       .frame(width:150, height:30)
-                                  
-                              }
-                              
-                              Button(action: {}) {
-                                  Text("Battery Check")
-                                      .font(.callout)
-                                      .padding(9)
-                                      .foregroundColor(.white)
-                                      .background(Color("Color"))
-                                      .cornerRadius(16)
-                                  //                                .frame(width:150, height:30)
-                                  
-                                  
-                              }
-                              
-                              Button(action: {}) {
-                                  Text("Lubricating")
-                                      .font(.callout)
-                                      .padding(9)
-                                      .foregroundColor(.white)
-                                      .background(Color("Color"))
-                                      .cornerRadius(16)
-                                  //               .frame(width:150, height:30)
-                                  
-                              }
-                              
-                          }
-                          .padding(.top, 20.0)
-                          
-                          
-                          Text("Reminder timing")
-                              .fontWeight(/*@START_MENU_TOKEN@*/.regular/*@END_MENU_TOKEN@*/)
-                              .foregroundColor(Color.white)
-                              .multilineTextAlignment(.leading)
-                              .padding(.trailing, 227.0)
-                              .padding(.top, 83.0)
-                          //  .padding(.top, -80)
-                          //  .multilineTextAlignment(.leading)
-                          // .lineLimit(0)
-                          // .accessibilityIdentifier(/*@START_MENU_TOKEN@*/"Identifier"/*@END_MENU_TOKEN@*/)
-                          
-                          DatePicker("" , selection:$selectedDate,
-                                     displayedComponents: [.date])
-                          //   .padding(.top, -200)
-                          .padding(.trailing,240)
-                          .accentColor(Color.white)
-                          .datePickerStyle(CompactDatePickerStyle())
-                          .padding(.vertical, 21.0)
-                          
-                          Text("  Select when you'd like to receive reminders")
-                              .fontWeight(.regular)
-                              .foregroundColor(Color.white)
-                              .multilineTextAlignment(.leading)
-                              .padding(.top, 42.0)
-                         .padding([.trailing],50.0)
-                          
-                          HStack{
-                              Button(action: {}) {
-                                  Text("Month before ")
-                                      .font(.callout)
-                                      .padding(9)
-                                      .foregroundColor(.white)
-                                      .background(Color("Color"))
-                                      .cornerRadius(16)
-                                  //                       .frame(width:150, height:30)
-                                  
-                              }
-                              
-                              Button(action: {}) {
-                                  Text("Week before")
-                                      .font(.callout)
-                                      .padding(9)
-                                      .foregroundColor(.white)
-                                      .background(Color("Color"))
-                                      .cornerRadius(16)
-                                  //                                .frame(width:150, height:30)
-                                  
-                                  
-                              }
-                              
-                              Button(action: {}) {
-                                  Text("3 Days before")
-                                      .font(.callout)
-                                      .padding(9)
-                                      .foregroundColor(.white)
-                                      .background(Color("Color"))
-                                      .cornerRadius(16)
-                                  //               .frame(width:150, height:30)
-                                  
-                              }
-                              
-                          }
-                          .padding(.vertical, 18.0)
-                          //  .padding(.top,180)
-                          
-                          VStack{
-                              
-                              
-                              Toggle(isOn: $toggle)
-                              {
-                                  Text("Send confirmation after reminder ")
-                                      .foregroundColor(.white)
-                                      .padding(.leading)
-                                  
-                              }
+         
+         @State var selectedDate = Date()
+         @Environment(\.presentationMode) var presentationMode
+         var body: some View {
+             VStack {
+                 NavigationView {
+                     ZStack{
+                         Color("ColorRec 1")
+                             .ignoresSafeArea(.all)
+                         VStack{
+                             Text("  Choose reminder type")
+                                 .fontWeight(.regular)
+                                 .foregroundColor(Color.white)
+                                 .multilineTextAlignment(.leading)
+                                 .padding([.trailing],200.0)
+                            
+                             ScrollView(.horizontal){
+                                 HStack{
+                                     SelectButton1(isSelected: $isSelected1, text1: "Tire Rotation", color:.green )
+                                         .onTapGesture {
+                                             isSelected1.toggle()
+                                             if  isSelected1{
+                                                 isSelected2=false
+                                                 isSelected3=false
+                                             }
+                                         }
+                                     
+                                     SelectButton1(isSelected: $isSelected2, text1: "Battery Check", color: .green)
+                                         .onTapGesture {
+                                             isSelected2.toggle()
+                                             if  isSelected2{
+                                                 isSelected1=false
+                                                 isSelected3=false
+                                             }
+                                         }
+                                     SelectButton1(isSelected: $isSelected3, text1: "Lubricating", color: .green)
+                                         .onTapGesture {
+                                             isSelected3.toggle()
+                                             if  isSelected3{
+                                                 isSelected1=false
+                                                 isSelected2=false
+                                             }
+                                         }
+                                 }}.padding(.top)
+                                 .padding(.leading)
 
-                              .toggleStyle(SwitchToggleStyle(tint: .black))
-                              //  .padding(.top, 400)
-                              
-                          }
-                          .padding(.top, 44.0)
-                          .padding()
-                          
-                          
-                      }
-                          .navigationBarTitle("Routine maintenance  ")
-                          
-                          .navigationBarTitleDisplayMode(.inline)
-                          .toolbar {
-                              ToolbarItem(placement: .cancellationAction) {
-                                  Button(action: {
-                                      self.presentationMode.wrappedValue.dismiss()
-                                  }) {
-                                      Text("Cancel")
-                                          .foregroundColor(.black)
-                                  }
-                              }
-                              
-                              ToolbarItem(placement: .confirmationAction) {
-                                  Button(action: {
-                                      // Save your data here
-                                      
-                                  }) {
-                                      Text("Save")
-                                          .foregroundColor(.black)
-                                  }
-                                  
-                              }
-                          }
-                    
-                      
-                  }
-              }
-          }}
-  }
+                             
+                             
+                             Text("Reminder timing")
+                                 .fontWeight(/*@START_MENU_TOKEN@*/.regular/*@END_MENU_TOKEN@*/)
+                                 .foregroundColor(Color.white)
+                                 .multilineTextAlignment(.leading)
+                                 .padding(.trailing, 227.0)
+                                 .padding(.top, 83.0)
+                             
+                             
+                             DatePicker("" , selection:$selectedDate,
+                                        displayedComponents: [.date])
+                            
+                             .padding(.trailing,250)
+                             .accentColor(Color.white)
+                             .datePickerStyle(CompactDatePickerStyle())
+                             .padding(.vertical, 21.0)
+                             
+                             Text("  Select when you'd like to receive reminders")
+                                 .fontWeight(.regular)
+                                 .foregroundColor(Color.white)
+                                 .multilineTextAlignment(.leading)
+                                 .padding(.top, 42.0)
+                            .padding([.trailing],50.0)
+                             
+                             
+                             
+                             
+                             ScrollView(.horizontal){
+                                 HStack{
+                                     SelectButton2(isSelected: $isSelected4, text2: "Month before", color:.green )
+                                         .onTapGesture {
+                                             isSelected4.toggle()
+                                             if  isSelected4{
+                                                 isSelected5=false
+                                                 isSelected6=false
+                                             }
+                                         }
+                                     
+                                     SelectButton2(isSelected: $isSelected5, text2: "Week before", color: .green)
+                                         .onTapGesture {
+                                             isSelected5.toggle()
+                                             if  isSelected5{
+                                                 isSelected4=false
+                                                 isSelected6=false
+                                             }
+                                         }
+                                     SelectButton2(isSelected: $isSelected6, text2: "3 Days before", color: .green)
+                                         .onTapGesture {
+                                             isSelected6.toggle()
+                                             if  isSelected6{
+                                                 isSelected4=false
+                                                 isSelected5=false
+                                             }
+                                         }
+                                 }}.padding(.top)
+                                 .padding(.leading)
+                            
+                             VStack{
+                                 
+                                 
+                                 Toggle(isOn: $toggle)
+                                 {
+                                     Text("Send confirmation after reminder ")
+                                         .foregroundColor(.white)
+                                         .padding(.leading)
+                                     
+                                 }
+
+                                 .toggleStyle(SwitchToggleStyle(tint: .black))
+                                 //  .padding(.top, 400)
+                                 
+                             }
+                             .padding(.top, 44.0)
+                             .padding()
+                             
+                             
+                         }
+                             .navigationBarTitle("Routine maintenance  ")
+                             
+                             .navigationBarTitleDisplayMode(.inline)
+                             .toolbar {
+                                 ToolbarItem(placement: .cancellationAction) {
+                                     Button(action: {
+                                         self.presentationMode.wrappedValue.dismiss()
+                                     }) {
+                                         Text("Cancel")
+                                             .foregroundColor(.black)
+                                     }
+                                 }
+                                 
+                                 ToolbarItem(placement: .confirmationAction) {
+                                     Button(action: {
+                                         // Save your data here
+                                         
+                                     }) {
+                                         Text("Save")
+                                             .foregroundColor(.black)
+                                     }
+                                     
+                                 }
+                             }
+                       
+                         
+                     }
+                 }
+             }}
+     }
 
 
 #Preview {
