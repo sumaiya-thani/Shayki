@@ -17,13 +17,13 @@ struct SelectButton2: View {
         ZStack{
             Rectangle()
                 .frame(width: 115,height: 40)
-                .foregroundColor(isSelected ? color : .white)
-                .cornerRadius(16)
+                .foregroundColor(isSelected ? color : Color("ColorCard"))
+                .cornerRadius(10)
+            
                
             
             Text(text2)
-                .foregroundColor(.black)
-        }
+            .foregroundColor(.white)        }
     }
     }
 
@@ -31,7 +31,7 @@ struct SelectButton2: View {
     static var previews : some View {
 
         SelectButton2(isSelected:.constant(false),
-                     text2: "option ",color : .white)
+                     text2: "option ",color :  Color("ColorCard"))
         
     }
     }

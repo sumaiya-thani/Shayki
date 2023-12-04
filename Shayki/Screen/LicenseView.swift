@@ -17,13 +17,13 @@ struct LicenseView: View {    @State var toggle = false
               VStack {
                   NavigationView {
                       ZStack{
-                          Color("ColorRec")
+                          Color("ColorRec 1")
                               .ignoresSafeArea(.all)
                           
                           Text(" Choose the date when your license will expire")
                               .fontWeight(.regular)
                               .foregroundColor(Color.white)
-                              .padding(.top, -280)
+                              .padding(.top,-280)
                           
                           
                           
@@ -31,14 +31,16 @@ struct LicenseView: View {    @State var toggle = false
                           displayedComponents: [.date])
                           .padding(.top, -200)
                           .padding(.trailing,240)
-                          .accentColor(Color.white)
+                          .accentColor(Color.blue)
+                          .colorMultiply(.black)
+                          .environment(\.colorScheme, .dark)
                               .datePickerStyle(CompactDatePickerStyle())
                           
                           
                           Text(" Select when you'd like to receive reminders")
                               .fontWeight(/*@START_MENU_TOKEN@*/.regular/*@END_MENU_TOKEN@*/)
                               .foregroundColor(Color.white)
-                              .padding(.top, -80)
+                              .padding(.top, 10)
                               .accessibilityIdentifier(/*@START_MENU_TOKEN@*/"Identifier"/*@END_MENU_TOKEN@*/)
 
                           ScrollView(.horizontal){
@@ -51,6 +53,8 @@ struct LicenseView: View {    @State var toggle = false
                                               isSelected3=false
                                           }
                                       }
+                                      .padding(.top, 200)
+
                                   
                                   SelectButton1(isSelected: $isSelected2, text1: "Week before", color: .green)
                                       .onTapGesture {
@@ -60,6 +64,8 @@ struct LicenseView: View {    @State var toggle = false
                                               isSelected3=false
                                           }
                                       }
+                                      .padding(.top, 200)
+
                                   SelectButton1(isSelected: $isSelected3, text1: "3 Days before", color: .green)
                                       .onTapGesture {
                                           isSelected3.toggle()
@@ -68,7 +74,9 @@ struct LicenseView: View {    @State var toggle = false
                                               isSelected2=false
                                           }
                                       }
+                                .padding(.top, 200)
                               }}.padding(.leading,35)
+                          
                           VStack{
                               
                           
@@ -76,11 +84,9 @@ struct LicenseView: View {    @State var toggle = false
                               {
                                   Text("Send confirmation after reminder ")
                                       .foregroundColor(.white)
-                                     
-                                      
                       
                               }
-                             .padding(.top, 200)
+                             .padding(.top, 390)
                              .padding(.leading,20)
                              
                           }
@@ -106,7 +112,7 @@ struct LicenseView: View {    @State var toggle = false
                                           // Save your data here
                                           
                                       }) {
-                                          Text("Save")
+                                          Text("Add")
                                               .foregroundColor(.black)
                                       }
                                       

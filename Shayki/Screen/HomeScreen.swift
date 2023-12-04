@@ -21,8 +21,11 @@ struct HomeScreen: View {
 
     var body: some View {
         SiriTipView(intent: StartAppIntent(), isVisible: $isVisible)
+        
+            
     }
 }
+
 #Preview {
     HomeScreen()
 }

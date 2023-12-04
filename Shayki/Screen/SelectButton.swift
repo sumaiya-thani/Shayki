@@ -4,7 +4,6 @@
 //
 //  Created by SHUAA on 03-12-2023.
 //
-
 import Foundation
 import SwiftUI
 struct SelectButton: View {
@@ -17,13 +16,14 @@ struct SelectButton: View {
         ZStack{
             Rectangle()
                 .frame(width: 150,height: 40)
-                .foregroundColor(isSelected ? color : .white)
-                .cornerRadius(16)
-               
+                .foregroundColor(isSelected ? color : Color("ColorCard"))
+                .cornerRadius(10)
+            
             
             Text(text)
-                .foregroundColor(.black)
+                .foregroundColor(.white)
         }
+
     }
     }
 
@@ -35,4 +35,3 @@ struct SelectButton: View {
         
     }
     }
-

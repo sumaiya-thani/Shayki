@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct RoutineMaintenance: View {
     @State private var isSelected1 = false
            @State private var isSelected2 = false
@@ -158,7 +159,7 @@ struct RoutineMaintenance: View {
                                          // Save your data here
                                          
                                      }) {
-                                         Text("Save")
+                                         Text("Add")
                                              .foregroundColor(.black)
                                      }
                                      
@@ -170,6 +171,8 @@ struct RoutineMaintenance: View {
                  }
              }}
      }
+
+
 
 
 #Preview {

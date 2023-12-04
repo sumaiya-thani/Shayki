@@ -9,97 +9,131 @@ import SwiftUI
 
 struct CustomReminder: View {
     
-    @State var textFieldText : String = ""
-    @State var textFieldText2 : String = ""
-    @State var toggle = false
+        @State var toggle = false
+        @State var selectedDate = Date()
+        @State private var isSelected1 = false
+        @State private var isSelected2 = false
+        @State private var isSelected3 = false
+        @State var text1 : String = ""
+        @State var text2 : String = ""
 
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
             ZStack{
-                Color("ColorBg")
+                Color("ColorRec 1")
                     .ignoresSafeArea(.all)
                 VStack{
-                    TextField( "Title", text: $textFieldText)
-                    //.textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(5)
-                        .background(Color.gray.opacity(0.3)).cornerRadius(10)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
+                    TextField(" Title ", text: $text1)
                         .padding()
-                        .offset(x:0,y:10)
-                
-               
-                    
-                    TextField( "Note", text: $textFieldText2)
-                        .padding(5)
-                    //                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .background(Color.gray.opacity(0.3)).cornerRadius(10)
                         .foregroundColor(.white)
+                        .background(Color.white.opacity(0.2).cornerRadius(15))
                         .font(.headline)
                     
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
                         .padding()
-                        .offset(x:0,y:10)
+                    TextField(" Note ", text: $text2 )
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.white.opacity(0.2).cornerRadius(15))
+                        .font(.headline)
+                        .padding()
                     
                     Text("Reminders timing")
+                        .font(.title3)
                         .foregroundColor(.white)
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
-                        .padding()
+                        .padding(.bottom,90)
                         .offset(x:-98,y:10)
-                    Text("Select when you'd like to receive reminders")
-                        .font(.callout)
-                        .foregroundColor(.white)
-
-                    HStack{
-                        
-                        Button(action:{}){
-                            Text("Month before")
-                                .font(.callout)
-                                .padding(9)
-                                .foregroundColor(.white)
-                                .background(Color("ColorCard"))
-                                .cornerRadius(10)
-
-                        }
-                        
-                        Button(action:{}){
-                            Text("Week before")
-                                .font(.callout)
-                                .padding(9)
-                                .foregroundColor(.white)
-                                .background(Color("ColorCard"))
-                                .cornerRadius(10)
-
-                        }
-                        Button(action:{}){
-                            Text("6 day before")
-                                .font(.callout)
-                                .padding(9)
-                                .foregroundColor(.white)
-                                .background(Color("ColorCard"))
-                                .cornerRadius(10)
-
-                        }
-
-                    }
-                                    
-                    VStack{
-                        Toggle(isOn: $toggle) {
-                        Text("Send confirmation after reminder")
-                        .foregroundColor(.white)
                     
+                  
 
-                        }
+                    Text(" Select when you'd like to receive reminders")
+                        .fontWeight(/*@START_MENU_TOKEN@*/.regular/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(Color.white)
+                        .padding(.bottom, 10)
+                        .padding(.trailing)
+                        .accessibilityIdentifier(/*@START_MENU_TOKEN@*/"Identifier"/*@END_MENU_TOKEN@*/)
                         
+            
+
+                    ScrollView(.horizontal){
+                        HStack{
+                            SelectButton1(isSelected: $isSelected1, text1: "Month before", color:.green )
+                                .onTapGesture {
+                                    isSelected1.toggle()
+                                    if  isSelected1{
+                                        isSelected2=false
+                                        isSelected3=false
+                                    }
+                                }
+                                .padding(.bottom, 150)
+
+                            
+                            SelectButton1(isSelected: $isSelected2, text1: "Week before", color: .green)
+                                .onTapGesture {
+                                    isSelected2.toggle()
+                                    if  isSelected2{
+                                        isSelected1=false
+                                        isSelected3=false
+                                    }
+                                }
+                                .padding(.bottom, 150)
+                            SelectButton1(isSelected: $isSelected3, text1: "3 Days before", color: .green)
+                                .onTapGesture {
+                                    isSelected3.toggle()
+                                    if  isSelected3{
+                                        isSelected1=false
+                                        isSelected2=false
+                                    }
+                                }
+                        .padding(.bottom, 150)
+                        }}.padding(.leading,35)
+//                        Button(action:{}){
+//                            Text("Month before")
+//                                .font(.callout)
+//                                .padding(9)
+//                                .foregroundColor(.white)
+//                                .background(Color("ColorCard"))
+//                                .cornerRadius(10)
+//
+//                        }
+//
+//                        Button(action:{}){
+//                            Text("Week before")
+//                                .font(.callout)
+//                                .padding(9)
+//                                .foregroundColor(.white)
+//                                .background(Color("ColorCard"))
+//                                .cornerRadius(10)
+//
+//                        }
+//                        Button(action:{}){
+//                            Text("6 day before")
+//                                .font(.callout)
+//                                .padding(9)
+//                                .foregroundColor(.white)
+//                                .background(Color("ColorCard"))
+//                                .cornerRadius(10)
+//
+//                        }
+
                     }
-                    .padding()
+
+                                    
+                VStack{
+                    
+                
+                    Toggle(isOn: $toggle)
+                    {
+                        Text("Send confirmation after reminder ")
+                            .foregroundColor(.white)
+                          
+
+                    }
+                   .padding(.top, 390)
+                   .padding(.leading)
+                }
+                .padding()
+//                    .padding()
 //                        .frame(width: 146, height: 100)
                        
 //                        .background(Color("ColorCard"))
@@ -108,35 +142,34 @@ struct CustomReminder: View {
                 }
                 
                 
+                .navigationBarTitle("Set New Reminder ")
+                            
+                                   .navigationBarTitleDisplayMode(.inline)
+                                   .toolbar {
+                                       ToolbarItem(placement: .cancellationAction) {
+                                           Button(action: {
+                                               self.presentationMode.wrappedValue.dismiss()
+                                           }) {
+                                               Text("Cancel")
+                                                   .foregroundColor(.black)
+                                           }
+                                       }
+
+                                       ToolbarItem(placement: .confirmationAction) {
+                                           Button(action: {
+                                               // Save your data here
+
+                                           }) {
+                                               Text("Add")
+                                                   .foregroundColor(.black)
+                                           }
+                                        
+                                       }
             }
             
-                   .navigationBarTitle("Set New Reminder ")
-            
-                   .navigationBarTitleDisplayMode(.inline)
-                   .toolbar {
-                       ToolbarItem(placement: .cancellationAction) {
-                           Button(action: {
-                               self.presentationMode.wrappedValue.dismiss()
-                           }) {
-                               Text("Cancel")
-                                   .foregroundColor(.black)
-                           }
-                       }
-
-                       ToolbarItem(placement: .confirmationAction) {
-                           Button(action: {
-                               // Save your data here
-
-                           }) {
-                               Text("Save")
-                                   .foregroundColor(.black)
-                           }
-                        
-                       }
-                   }
+                                      }
         }
     }
-}
 
 #Preview {
     CustomReminder ()

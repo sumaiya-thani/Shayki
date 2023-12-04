@@ -21,80 +21,86 @@ struct CarWash: View {
             NavigationView {
                 ZStack{
                     
-                    Color("ColorRec")
+                    Color("ColorRec 1")
                         .ignoresSafeArea(.all)
                  
                     VStack(){
                         Text("Reminder timing")
-                            .fontWeight(.regular)
+                            .font(.title2)
                             .foregroundColor(Color.white)
                             .padding(.trailing,190)
-                        
+                            .padding(.bottom,190)
                         
                         
                         DatePicker("" , selection:$selectedDate,
-                                   displayedComponents: [.date])
-                        .padding(.trailing,220)
-                     
-                        .accentColor(Color.white)
-                        .datePickerStyle(CompactDatePickerStyle())
-                      
+                        displayedComponents: [.date])
+                        .padding(.top, -160)
+                        .padding(.trailing,240)
+                        .accentColor(Color.blue)
+                        .colorMultiply(.black)
+                        .environment(\.colorScheme, .dark)
+                            .datePickerStyle(CompactDatePickerStyle())
                         
                         .padding()
                         
                         Text(" Select when you'd like to receive reminders")
-                            .fontWeight(/*@START_MENU_TOKEN@*/.regular/*@END_MENU_TOKEN@*/)
+                            .fontWeight(.regular)
                             .foregroundColor(Color.white)
+                            .padding(.bottom, 200)
                             .accessibilityIdentifier(/*@START_MENU_TOKEN@*/"Identifier"/*@END_MENU_TOKEN@*/)
+
+                    }
                         
-                        
-                        ScrollView(.horizontal){
-                            HStack{
-                                SelectButton3(isSelected: $isSelected1, text3: "Month before", color:.green )
-                                    .onTapGesture {
-                                        isSelected1.toggle()
-                                        if  isSelected1{
-                                            isSelected2=false
-                                            isSelected3=false
-                                        }
+                    ScrollView(.horizontal){
+                        HStack{
+                            SelectButton1(isSelected: $isSelected1, text1: "Month before", color:.green )
+                                .onTapGesture {
+                                    isSelected1.toggle()
+                                    if  isSelected1{
+                                        isSelected2=false
+                                        isSelected3=false
                                     }
-                                
-                                SelectButton3(isSelected: $isSelected2, text3: "Week before", color: .green)
-                                    .onTapGesture {
-                                        isSelected2.toggle()
-                                        if  isSelected2{
-                                            isSelected1=false
-                                            isSelected3=false
-                                        }
-                                    }
-                                SelectButton3(isSelected: $isSelected3, text3: "3 Days before", color: .green)
-                                    .onTapGesture {
-                                        isSelected3.toggle()
-                                        if  isSelected3{
-                                            isSelected1=false
-                                            isSelected2=false
-                                        }
-                                    }
-                            }}.padding(.leading,20)
-                       
-                        
-                      
-                            .padding()
+                                }
+                                .padding(.top, 200)
+
                             
+                            SelectButton1(isSelected: $isSelected2, text1: "Week before", color: .green)
+                                .onTapGesture {
+                                    isSelected2.toggle()
+                                    if  isSelected2{
+                                        isSelected1=false
+                                        isSelected3=false
+                                    }
+                                }
+                                .padding(.top, 200)
+
+                            SelectButton1(isSelected: $isSelected3, text1: "3 Days before", color: .green)
+                                .onTapGesture {
+                                    isSelected3.toggle()
+                                    if  isSelected3{
+                                        isSelected1=false
+                                        isSelected2=false
+                                    }
+                                }
+                          .padding(.top, 200)
+                        }}.padding(.leading,35)
+                  
+                            
+                                
+                        VStack{
+                            
+                        
                             Toggle(isOn: $toggle)
                             {
                                 Text("Send confirmation after reminder ")
-                                    .foregroundColor(.white)
-                                
-                                
-                                
+                            .foregroundColor(.white)
+                    
                             }
-                        
-                            
-                            .padding(.leading,35)
-                        
-                        
-                        
+                           .padding(.top, 390)
+                           .padding(.leading,20)
+                           
+                        }
+                        .padding()
                         .navigationBarTitle("Car Wash")
                         
                         .navigationBarTitleDisplayMode(.inline)
@@ -113,7 +119,7 @@ struct CarWash: View {
                                     // Save your data here
                                     
                                 }) {
-                                    Text("Save")
+                                    Text("Add")
                                         .foregroundColor(.black)
                                 }
                                 
@@ -124,7 +130,7 @@ struct CarWash: View {
                 }
             }
         }
-    }}
+    }
 #Preview {
     CarWash()
 }

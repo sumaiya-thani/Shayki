@@ -17,12 +17,13 @@ struct SelectButton1: View {
         ZStack{
             Rectangle()
                 .frame(width: 115,height: 40)
-                .foregroundColor(isSelected ? color : .white)
-                .cornerRadius(16)
+                .foregroundColor(isSelected ? color : Color("ColorCard"))
+                .cornerRadius(10)
+            
                
             
             Text(text1)
-                .foregroundColor(.black)
+                .foregroundColor(.white)
         }
     }
     }

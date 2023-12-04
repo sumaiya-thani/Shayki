@@ -328,7 +328,6 @@ struct MainScreen: View {
     
     
 }
-    
 
 
 #Preview {
