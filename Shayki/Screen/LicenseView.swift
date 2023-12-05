@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct LicenseView: View {    @State var toggle = false
+struct LicenseView: View {   
+    @State var toggle = false
     @State var selectedDate = Date()
     @State private var isSelected1 = false
     @State private var isSelected2 = false

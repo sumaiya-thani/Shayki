@@ -11,7 +11,13 @@ import Intents
 import IntentsUI
 
 struct MainScreen: View {
+
+   // let carIfo: CarInfo
     
+    
+    @EnvironmentObject var VM : CarViewModel
+
+
     @State var title = ""
     @State var notes = ""
     @State private var showingSheet1 = false
@@ -19,7 +25,7 @@ struct MainScreen: View {
     @State private var showingSheet3 = false
     @State private var showingSheet4 = false
     @State private var showingSheet5 = false
-    
+    @State private var vehicleInfo = VehicleInfo()
     // //Info from the user
     //    @State private var cylindersInput: String = ""
     //        @State private var odometerInput: String = ""
@@ -31,7 +37,6 @@ struct MainScreen: View {
     var body: some View {
         NavigationView {
             VStack{
-//                ScrollView{
                     ZStack{
                         Color("Color")
                             .ignoresSafeArea()
@@ -50,16 +55,18 @@ struct MainScreen: View {
                                 }
                             }
                             ToolbarItem(placement: .navigationBarTrailing) {
-                                NavigationLink(destination: Reminders()) {
+                                NavigationLink(destination: VehicleInfo()) {
                                     Image(systemName: "gearshape.fill")
                                         .foregroundColor(.white)
                                         .symbolRenderingMode(.palette)
+                                      
                                 }
                             }
-                        } .background(Color("Color"))
+                        }.background(Color("Color"))
                         
                         HStack{
-                            Text("Tesla Model X").font(.title3)
+                            Text("Tesla Model \(VM.carInfo.carModel)").font(.title3)
+//                            Text("Tesla Model X").font(.title3)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                             Image(systemName: "pencil")
@@ -82,14 +89,11 @@ struct MainScreen: View {
                                     HStack(){
                                         
                                         VStack(){
-                                            Text(dailyKilometersInput)
+                                            Text(VM.carInfo.dailyKilometersDriven)
                                             
                                                 .font(.title)
                                                 .fontWeight(.medium)
                                                 .padding(.bottom, 2.0)
-                                            
-                                            
-                                            
                                             Text("Km")
                                             
                                                 .font(.title3)
@@ -101,7 +105,7 @@ struct MainScreen: View {
                                         }.padding(.leading, 37.0)
                                         Spacer()
                                         VStack(alignment: .center){
-                                            Text("40")
+                                            Text("20")
                                                 .font(.title)
                                                 .fontWeight(.medium)
                                                 .padding(.bottom, 2.0)
@@ -113,11 +117,6 @@ struct MainScreen: View {
                                             
                                             
                                         }.padding(.trailing, 30.0)
-                                        
-                                        
-                                        
-                                        
-                                        
                                     }.multilineTextAlignment(.center)
                                         .frame(width: 347, height: 132)
                                         .foregroundColor(.white)
@@ -169,11 +168,7 @@ struct MainScreen: View {
                                             
                                             
                                         }
-                                        
-                                        
-                                        HStack{
-                                            
-                                            
+                                            HStack{
                                             Button(action: {
                                                 showingSheet2.toggle()
                                             }) {
@@ -195,9 +190,7 @@ struct MainScreen: View {
                                             }
                                             .sheet(isPresented: $showingSheet2) {
                                                 LicenseView()
-                                            }
-                                            
-                                            
+                                            }                                            
                                             Button(action: {
                                                 showingSheet3.toggle()
                                             }) {
@@ -220,9 +213,6 @@ struct MainScreen: View {
                                             .sheet(isPresented: $showingSheet3) {
                                                 RoutineMaintenance()
                                             }
-                                            
-                                            
-                                            
                                         }
                                         HStack{
                                             Button(action: {
@@ -249,29 +239,12 @@ struct MainScreen: View {
                                             .sheet(isPresented: $showingSheet4) {
                                                 CarWash()
                                             }
-                                            
-                                            Image(systemName: "plus.circle.fill")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                                .frame(width: 164, height: 132)
-                                                .foregroundColor(.white)
-                                                .background(Color("Color"))
-                                                .clipShape(RoundedRectangle(cornerRadius: 16.0))
-                                                .padding(.all, 8.0)
-                                                .shadow(radius: 10)
-                                        }
-                                        HStack{
                                             Button(action: {
-                                                showingSheet4.toggle()
+                                                showingSheet5.toggle()
                                             }) {
                                                 VStack(alignment: .center) {
-                                                    Text("Car Wash")
-                                                        .padding()
                                                     
-                                                        .font(.system(size: 14))
-                                                        .fontWeight(.bold)
-                                                    
-                                                    Image(systemName: "car.side")
+                                                    Image(systemName: "plus.circle.fill")
                                                         .font(.system(size: 48))
                                                 }
                                                 
@@ -282,21 +255,11 @@ struct MainScreen: View {
                                                 .padding(.all, 8.0)
                                                 .shadow(radius: 10)
                                             }
-                                            .sheet(isPresented: $showingSheet4) {
-                                                CarWash()
+                                            .sheet(isPresented: $showingSheet5) {
+                                                CustomReminder()
+                                                
                                             }
-                                            
-                                            Image(systemName: "plus.circle.fill")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                                .frame(width: 164, height: 132)
-                                                .foregroundColor(.white)
-                                                .background(Color("Color"))
-                                                .clipShape(RoundedRectangle(cornerRadius: 16.0))
-                                                .padding(.all, 8.0)
-                                                .shadow(radius: 10)
                                         }
-                                        
                                     }
                                 }
                                 //                        .offset(x: 0, y: 80)
@@ -307,29 +270,16 @@ struct MainScreen: View {
                     }
                     
 //                }
-                
-                
-                
             }.background(Color("Color"))
             
-        }.tint(.white)
+        }
+        .tint(.white)
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
 
 
-#Preview {
-    MainScreen()
-}
+//#Preview {
+//    MainScreen(carIfo: CarInfo())
+//}

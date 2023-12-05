@@ -9,21 +9,23 @@
 import SwiftUI
 
 struct Dialog: View {
+    @EnvironmentObject var VM : CarViewModel
+
     @State private var progressValue: Double = 5000 // Set your initial value here
        let maxValue: Double = 7500 // Set your maximum value here
        let minTimeInterval: TimeInterval = 0.5 // Minimum time interval between updates
        let maxTimeInterval: TimeInterval = 5.0 // Maximum time interval between updates
 
 //
-    @State private var odometerReading:Int = 5000
-    @State private var oilName:String = "Valvoline"
+//    @State private var odometerReading:Int = 5000
+//    @State private var oilName:String = ("\(VM.carInfo.oilTypeBrand)")
       
     var body: some View {
     
         
         VStack{
             
-            Text(oilName)
+            Text("\(VM.carInfo.oilTypeBrand)")
                 .font(.system(size: 14))
                 .fontWeight(.bold)
                 .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
@@ -60,7 +62,7 @@ struct Dialog: View {
               
             
             HStack{
-                Text("\(odometerReading)")
+                Text("\(VM.carInfo.odometerReading)")
                     .padding(.top, 3.0)
                     .font(.title3)
                     .fontWeight(.bold)

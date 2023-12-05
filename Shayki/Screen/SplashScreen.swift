@@ -16,14 +16,11 @@ struct SplashScreen: View {
                   .edgesIgnoringSafeArea(.all)
 
               VStack(alignment: .center) {
-                 
-
                   SwiftUIGIFPlayerView(gifName: "logo2")
                  
                       .frame(width: 300, height: 300) // Adjust te size as needed
                       .onAppear {
-                          withAnimation(.easeIn(duration: 1.2)) {
-                             
+                          withAnimation(.easeIn(duration: 1.2)) {  
                           }
                       }
                   Text("Shayki")

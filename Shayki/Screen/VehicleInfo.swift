@@ -9,6 +9,10 @@ import SwiftUI
 
 
 struct VehicleInfo: View {
+    
+    @EnvironmentObject var VM : CarViewModel
+    @State var modelNum : String = ""
+    @State var isMainScreenPresented = false
     @State private var isSelected1 = false
     @State private var isSelected2 = false
     @State private var isSelected3 = false
@@ -21,8 +25,9 @@ struct VehicleInfo: View {
     @State var selectedDate = Date()
     @Environment(\.presentationMode) var presentationMod
     var body: some View {
-        VStack{
-            NavigationView {
+        NavigationView {
+            VStack{
+                
                 ZStack {
                     Color ("ColorRec 1") .edgesIgnoringSafeArea(.all)
                     VStack{
@@ -37,7 +42,7 @@ struct VehicleInfo: View {
                         
                         ScrollView(.horizontal){
                             HStack{
-
+                                
                                 SelectButton(isSelected: $isSelected1, text: "4- cylinder engine", color: Color("ColorCard"))
                                     .onTapGesture {
                                         isSelected1.toggle()
@@ -46,8 +51,8 @@ struct VehicleInfo: View {
                                             isSelected3=false
                                         }
                                     }
-
-
+                                
+                                
                                 SelectButton(isSelected: $isSelected2, text: "6- cylinder engine", color: Color("ColorCard"))
                                     .onTapGesture {
                                         isSelected2.toggle()
@@ -56,7 +61,7 @@ struct VehicleInfo: View {
                                             isSelected3=false
                                         }
                                     }
-
+                                
                                 SelectButton(isSelected: $isSelected3, text: "8- cylinder engine", color: Color("ColorCard"))
                                     .onTapGesture {
                                         isSelected3.toggle()
@@ -65,8 +70,8 @@ struct VehicleInfo: View {
                                             isSelected2=false
                                         }
                                     }
-
-                                    
+                                
+                                
                             }
                         }.padding(.leading)
                         
@@ -76,11 +81,11 @@ struct VehicleInfo: View {
                             .foregroundColor(Color.white)
                             .padding(.trailing,260)
                             .padding(.top)
-                                                
+                        
                         Picker("", selection: $selectedOption) {
                             ForEach(options, id: \.self) { option in
                                 Text(option)
-                                
+                              
                             }
                             
                         } .frame(width: 110,height: 40)
@@ -91,9 +96,9 @@ struct VehicleInfo: View {
                             .colorMultiply(Color(("Color 2")))
                             .opacity(0.9)
                             .environment(\.colorScheme, .dark)
-                            
-
-
+                        
+                        
+                        
                         
                         
                         TextField(" Odometer Reading ", text: $text1)
@@ -133,31 +138,47 @@ struct VehicleInfo: View {
                                 HStack{
                                     Image(systemName: "arrow.backward")
                                         .foregroundColor(.black)
-                                    
-                                    
                                     Text("Back")
                                         .foregroundColor(.black)
                                 }
                             }
                         }
-                        
                         ToolbarItem(placement: .confirmationAction) {
                             Button(action: {
                                 // Save your data here
+                                isMainScreenPresented.toggle()
+//                              let carIfo =  CarInfo( odometerReading: text1, dailyKilometersDriven:  text2, oilTypeBrand: text3)
                                 
-                            }) {
-                                Text("Save")
-                                    .foregroundColor(.black)
+//                                VM.CarInfo.dailyKilometersDriven = text2
+//                                
+//                                VM.CarInfo.oilTypeBrand = text3
+//
+//                                VM.CarInfo.odometerReading = text1
+                                
+                                VM.setValues(carmodel: selectedOption,str1:  text1, str2: text2, str3: text3)}) {
+                                HStack{
+                                    Text("Save")
+                                        .foregroundColor(.black)
+                                }
                             }
-                            
+                            //                            .background(
+                            //                                NavigationLink(
+                            //                                    destination: MainScreen(dateNo: $selectedOption.wrappedValue)
+                            //                                        .navigationBarBackButtonHidden(true), // Hide back button
+                            //                                    isActive: $isMainScreenPresented
+                            //                                ) {
+                            //                                    EmptyView()
+                            //                                }.ignoresSafeArea(.all)
+                            //                                .hidden())
                         }
                     }
                     
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
+
     #Preview {
     VehicleInfo()
     }

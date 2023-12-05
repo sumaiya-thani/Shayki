@@ -30,17 +30,12 @@ struct StartAppIntent: AppIntent {
     func perform() async throws -> some ProvidesDialog & ShowsSnippetView {
         await ReminderService.startDefaultSession()
 
-        return .result(
+        return await .result(
             dialog: "Okay, Here is the oil check.",
             view: Dialog()
         )
     }
-    
-    
-    
 }
-
-
 struct MeditationShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
 
@@ -66,6 +61,8 @@ struct MeditationShortcuts: AppShortcutsProvider {
 struct ShaykiApp: App {
     
 
+    
+    @StateObject var CarVM = CarViewModel()
     //notification
     private var delegate: NotificationDelegate = NotificationDelegate()
            
@@ -82,6 +79,7 @@ struct ShaykiApp: App {
     var body: some Scene {
         WindowGroup {
             SplashScreen()
+      .environmentObject(CarVM)
             LocalNotifications()
         }
     }
