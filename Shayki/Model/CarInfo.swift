@@ -19,3 +19,7 @@ struct CarInfo {
     var dailyKilometersDriven: Int
     var oilTypeBrand: String
 }
+struct CarInfoo {
+
+    var oilTypeBrand: String
+}
