@@ -16,7 +16,7 @@ class CarViewModel : ObservableObject {
     
     
     
-    func setValues (carmodel :String,str1 :String , str2 :String  , str3 :String)
+    func setValues (carmodel :String,str1 :Int, str2 :Int  , str3 :String)
     {
         carInfo.carModel = carmodel
         carInfo.odometerReading = str1

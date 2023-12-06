@@ -13,11 +13,9 @@ import IntentsUI
 struct MainScreen: View {
 
    // let carIfo: CarInfo
-    
-    
     @EnvironmentObject var VM : CarViewModel
 
-
+    let userIlnput = ["CarViewModel","let userIlnput: [UserInput]"]
     @State var title = ""
     @State var notes = ""
     @State private var showingSheet1 = false
@@ -43,8 +41,8 @@ struct MainScreen: View {
                         
                         RoundedRectangle(cornerRadius: 35).fill(Color("Color 2"))
                             .padding(.bottom,-170)
-                            .frame(width: 400,height: 700)
-                            .offset(x: 0, y: 80)
+                            .frame(width: 400,height: 500)
+//                            .offset(x: 0, y: 80)
                         VStack {
                             
                         }  .toolbar {
@@ -67,18 +65,16 @@ struct MainScreen: View {
                         HStack{
                             Text("Tesla Model \(VM.carInfo.carModel)").font(.title3)
 //                            Text("Tesla Model X").font(.title3)
-                                .fontWeight(.bold)
                                 .foregroundColor(.white)
                             Image(systemName: "pencil")
                                 .foregroundColor(.white)
-                                .font(.title3)
-                                .fontWeight(.bold)
+//                                .font(.title3)
+//                                .fontWeight(.bold)
                             
-                        }.padding(.bottom,770)
+                        }.padding(.bottom,730)
                         
-                        Image("imageCar")
-                            .resizable()
-                            .frame(width: 260, height: 150, alignment: .center)
+                        Image("carImg")
+//                            
                             .shadow(radius: 20)
                             .padding(.bottom,575)
                         VStack{
@@ -89,7 +85,7 @@ struct MainScreen: View {
                                     HStack(){
                                         
                                         VStack(){
-                                            Text(VM.carInfo.dailyKilometersDriven)
+                                            Text("\(VM.carInfo.dailyKilometersDriven)")
                                             
                                                 .font(.title)
                                                 .fontWeight(.medium)
@@ -105,7 +101,7 @@ struct MainScreen: View {
                                         }.padding(.leading, 37.0)
                                         Spacer()
                                         VStack(alignment: .center){
-                                            Text("20")
+                                            Text("4")
                                                 .font(.title)
                                                 .fontWeight(.medium)
                                                 .padding(.bottom, 2.0)
@@ -158,10 +154,10 @@ struct MainScreen: View {
                                                 .padding(.all, 8.0)
                                                 .shadow(radius: 10)
                                             }
-                                            .sheet(isPresented: $showingSheet1) {
-                                                VehicleInfo()
-                                                
-                                            }
+//                                            .sheet(isPresented: $showingSheet1) {
+//                                                VehicleInfo()
+//                                                
+//                                            }
                                             
                                             
                                             Dialog()
@@ -251,6 +247,7 @@ struct MainScreen: View {
                                                 .frame(width: 164, height: 132)
                                                 .foregroundColor(.white)
                                                 .background(Color("Color"))
+                                                .opacity(0.9)
                                                 .clipShape(RoundedRectangle(cornerRadius: 16.0))
                                                 .padding(.all, 8.0)
                                                 .shadow(radius: 10)
@@ -260,6 +257,7 @@ struct MainScreen: View {
                                                 
                                             }
                                         }
+                                       
                                     }
                                 }
                                 //                        .offset(x: 0, y: 80)

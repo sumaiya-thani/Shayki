@@ -23,7 +23,7 @@ struct RoutineMaintenance: View {
                 VStack {
                     NavigationView {
                         ZStack{
-                            Color("ColorRec 1")
+                            Color("Color")
                                 .ignoresSafeArea(.all)
                             VStack{
                                 Text("  Choose reminder type")
@@ -31,7 +31,7 @@ struct RoutineMaintenance: View {
                                     .foregroundColor(Color.white)
                                     .multilineTextAlignment(.leading)
                                     .padding([.trailing],200.0)
-                               
+                                
                                 ScrollView(.horizontal){
                                     HStack{
                                         SelectButton1(isSelected: $isSelected1, text1: "Tire Rotation", color:Color("ColorRec") )
@@ -61,11 +61,11 @@ struct RoutineMaintenance: View {
                                             }
                                     }}.padding(.top)
                                     .padding(.leading)
-
+                                
                                 
                                 
                                 Text("Reminder timing")
-                                    .fontWeight(/*@START_MENU_TOKEN@*/.regular/*@END_MENU_TOKEN@*/)
+                                    .fontWeight(.regular)
                                     .foregroundColor(Color.white)
                                     .multilineTextAlignment(.leading)
                                     .padding(.trailing, 227.0)
@@ -74,19 +74,19 @@ struct RoutineMaintenance: View {
                                 
                                 DatePicker("" , selection:$selectedDate,
                                            displayedComponents: [.date])
-                               
+                                
                                 .padding(.trailing,250)
                                 .accentColor(Color.blue)
-                                .colorMultiply(.black)
+                                .environment(\.colorScheme, .dark)
                                 .datePickerStyle(CompactDatePickerStyle())
-                              //  .padding(.vertical, 21.0)
+                                //  .padding(.vertical, 21.0)
                                 
                                 Text("  Select when you'd like to receive reminders")
                                     .fontWeight(.regular)
                                     .foregroundColor(Color.white)
                                     .multilineTextAlignment(.leading)
                                     .padding(.top, 42.0)
-                               .padding([.trailing],50.0)
+                                    .padding([.trailing],50.0)
                                 
                                 
                                 
@@ -120,7 +120,7 @@ struct RoutineMaintenance: View {
                                             }
                                     }}.padding(.top)
                                     .padding(.leading)
-                               
+                                
                                 VStack{
                                     
                                     
@@ -131,7 +131,7 @@ struct RoutineMaintenance: View {
                                             .padding(.leading)
                                         
                                     }
-
+                                    
                                     .toggleStyle(SwitchToggleStyle(tint: .green))
                                     //  .padding(.top, 400)
                                     
@@ -141,31 +141,32 @@ struct RoutineMaintenance: View {
                                 
                                 
                             }
-                                .navigationBarTitle("Routine maintenance  ")
-                                
-                                .navigationBarTitleDisplayMode(.inline)
-                                .toolbar {
-                                    ToolbarItem(placement: .cancellationAction) {
+                           
+                            .toolbar {
+                                ToolbarItem(placement: .confirmationAction) {
+                                    HStack{
                                         Button(action: {
-                                            self.presentationMode.wrappedValue.dismiss()
-                                        }) {
-                                            Text("Cancel")
-                                                .foregroundColor(.black)
-                                        }
-                                    }
-                                    
-                                    ToolbarItem(placement: .confirmationAction) {
-                                        Button(action: {
-                                            // Save your data here
                                             
                                         }) {
-                                            Text("Add")
-                                                .foregroundColor(.black)
+                                            Text("      Add ")
+                                                .foregroundColor(.white)
+                                                .padding(.leading,-110)
+                                        }
+
+                                        Text("Routine maintenance").font(.headline).foregroundColor(Color.white)
+                                            .padding(.trailing,30)
+                                        Button(action: {
+                                            // Save your data here
+                                            self.presentationMode.wrappedValue.dismiss()
+
+                                        }) {
+                                            Text("Cancel")
+                                                .foregroundColor(.white)
                                         }
                                         
                                     }
-                                }
-                          
+                                }                            }
+                            
                             
                         }
                     }

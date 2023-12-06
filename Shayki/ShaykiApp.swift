@@ -48,8 +48,18 @@ struct MeditationShortcuts: AppShortcutsProvider {
                     
                                  
                                  ],
-                        shortTitle: "Complete Task",
-                        systemImageName: "checkmark")
+                        shortTitle: "Oil Check",
+                        systemImageName: "drop.fill")
+        
+        AppShortcut(intent:StartAppIntent(),
+                    phrases: ["Summarize Reminders in \(.applicationName)",
+                              "Begin \(.applicationName)",
+                            "Meditate with \(.applicationName)",
+                
+                             
+                             ],
+                    shortTitle: "Summarize Reminders",
+                    systemImageName: "list.clipboard")
         
         
     }

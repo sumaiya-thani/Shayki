@@ -23,12 +23,12 @@ struct CarWash: View {
               VStack {
                   NavigationView {
                       ZStack{
-                          Color("ColorRec 1")
+                          Color("Color")
                               .ignoresSafeArea(.all)
                           VStack{
-                           
-                               Text("Reminder timing")
-                                  .fontWeight(/*@START_MENU_TOKEN@*/.regular/*@END_MENU_TOKEN@*/)
+                              
+                              Text("Reminder timing")
+                                  .fontWeight(.regular)
                                   .foregroundColor(Color.white)
                                   .multilineTextAlignment(.leading)
                                   .padding(.trailing, 227.0)
@@ -37,19 +37,19 @@ struct CarWash: View {
                               
                               DatePicker("" , selection:$selectedDate,
                                          displayedComponents: [.date])
-                             
+                              
                               .padding(.trailing,250)
                               .accentColor(Color.blue)
-                              .colorMultiply(.black)
+                              .environment(\.colorScheme, .dark)
                               .datePickerStyle(CompactDatePickerStyle())
                               .padding(.vertical, 21.0)
                               
-                              Text("  Select when you'd like to receive reminders")
+                              Text("Select when you'd like to receive reminders")
                                   .fontWeight(.regular)
                                   .foregroundColor(Color.white)
                                   .multilineTextAlignment(.leading)
                                   .padding(.top, 42.0)
-                             .padding([.trailing],60.0)
+                                  .padding([.leading],0.0)
                               
                               
                               
@@ -83,7 +83,7 @@ struct CarWash: View {
                                           }
                                   }}.padding(.top)
                                   .padding(.leading)
-                             
+                              
                               VStack{
                                   
                                   
@@ -94,7 +94,7 @@ struct CarWash: View {
                                           .padding(.leading)
                                       
                                   }
-
+                                  
                                   .toggleStyle(SwitchToggleStyle(tint: .green))
                                   //  .padding(.top, 400)
                                   
@@ -104,31 +104,36 @@ struct CarWash: View {
                               
                               
                           } .padding(.bottom,200)
-                              .navigationBarTitle("Car Wash ")
-                              
+                          
+                          
                               .navigationBarTitleDisplayMode(.inline)
+                          
                               .toolbar {
-                                  ToolbarItem(placement: .cancellationAction) {
-                                      Button(action: {
-                                          self.presentationMode.wrappedValue.dismiss()
-                                      }) {
-                                          Text("Cancel")
-                                              .foregroundColor(.white)
-                                      }
-                                  }
-                                  
                                   ToolbarItem(placement: .confirmationAction) {
-                                      Button(action: {
-                                          // Save your data here
+                                      HStack{
+                                          Button(action: {
+                                              
+                                          }) {
+                                              Text("       Add")
+                                                  .foregroundColor(.white)
+                                                  .padding(.leading,-110)
+                                          }
+
+                                          Text("             Car Wash        ").font(.headline).foregroundColor(Color.white)
+                                              .padding(.trailing,45)
+                                          Button(action: {
+                                              // Save your data here
+                                              self.presentationMode.wrappedValue.dismiss()
+
+                                          }) {
+                                              Text("Cancel")
+                                                  .foregroundColor(.white)
+                                          }
                                           
-                                      }) {
-                                          Text("Add")
-                                              .foregroundColor(.black)
                                       }
-                                      
                                   }
                               }
-                        
+                          
                           
                       }
                   }

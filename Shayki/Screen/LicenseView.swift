@@ -23,7 +23,7 @@ struct LicenseView: View {
           VStack {
               NavigationView {
                   ZStack{
-                      Color("ColorRec 1")
+                      Color("Color")
                           .ignoresSafeArea(.all)
                     VStack{
                           
@@ -32,7 +32,7 @@ struct LicenseView: View {
                              .fontWeight(/*@START_MENU_TOKEN@*/.regular/*@END_MENU_TOKEN@*/)
                              .foregroundColor(Color.white)
                              .multilineTextAlignment(.leading)
-                             .padding(.trailing,40)
+                             .padding([.leading],0.0)
                              .padding(.top, 83.0)
                          
                          
@@ -41,16 +41,17 @@ struct LicenseView: View {
                         
                          .padding(.trailing,250)
                          .accentColor(Color.blue)
-                         .colorMultiply(.black)
+                         .environment(\.colorScheme, .dark)
                          .datePickerStyle(CompactDatePickerStyle())
+
                          .padding(.vertical, 21.0)
                          
-                         Text("  Select when you'd like to receive reminders")
+                         Text("Select when you'd like to receive reminders")
                              .fontWeight(.regular)
                              .foregroundColor(Color.white)
                              .multilineTextAlignment(.leading)
                              .padding(.top, 42.0)
-                        .padding([.trailing],60.0)
+                        .padding([.leading],0.0)
                          
                          
                          
@@ -105,28 +106,35 @@ struct LicenseView: View {
                          
                          
                      } .padding(.bottom,200)
-                          .navigationBarTitle("Linense Expiraation ")
+//                          .navigationBarTitle("Linense Expiraation ")
+                   
                           
                           .navigationBarTitleDisplayMode(.inline)
                           .toolbar {
-                              ToolbarItem(placement: .cancellationAction) {
-                                  Button(action: {
-                                      self.presentationMode.wrappedValue.dismiss()
-                                  }) {
-                                      Text("Cancel")
-                                          .foregroundColor(.black)
-                                  }
-                              }
-                              
+
+                            
                               ToolbarItem(placement: .confirmationAction) {
-                                  Button(action: {
-                                      // Save your data here
+                                  HStack{
+                                      Button(action: {
+                                          
+                                      }) {
+                                          Text("       Add")
+                                              .foregroundColor(.white)
+                                              .padding(.leading,-110)
+                                      }
+
+                                      Text("Linense Expiraation").font(.headline).foregroundColor(Color.white)
+                                          .padding(.trailing,45)
+                                      Button(action: {
+                                          // Save your data here
+                                          self.presentationMode.wrappedValue.dismiss()
+
+                                      }) {
+                                          Text("Cancel")
+                                              .foregroundColor(.white)
+                                      }
                                       
-                                  }) {
-                                      Text("Add")
-                                          .foregroundColor(.black)
                                   }
-                                  
                               }
                           }
                     

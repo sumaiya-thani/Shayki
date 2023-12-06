@@ -11,8 +11,8 @@ import SwiftUI
 struct Dialog: View {
     @EnvironmentObject var VM : CarViewModel
 
-    @State private var progressValue: Double = 5000 // Set your initial value here
-       let maxValue: Double = 7500 // Set your maximum value here
+    @State private var progressValue: Double = 0.0 // Set your initial value here
+       let maxValue: Double = 7000 // Set your maximum value here
        let minTimeInterval: TimeInterval = 0.5 // Minimum time interval between updates
        let maxTimeInterval: TimeInterval = 5.0 // Maximum time interval between updates
 
@@ -40,7 +40,7 @@ struct Dialog: View {
                                 .frame(width: 35, height: 35)
 
                             Circle()
-                                .trim(from: 0, to: CGFloat(progressValue / maxValue))
+                                .trim(from: 0, to: CGFloat(Double(VM.carInfo.odometerReading) / maxValue))
                                 .stroke(
                                     AngularGradient(
                                         gradient: Gradient(colors: [.white, .white]),
@@ -68,7 +68,7 @@ struct Dialog: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color.gray)
                 
-                Text("/ 7,500")
+                Text("/ 7,000")
                     .padding(.top, 3.0)
                     .font(.title3)
                     .fontWeight(.medium)

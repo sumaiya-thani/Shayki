@@ -22,7 +22,7 @@ struct CustomReminder: View {
        var body: some View {
            NavigationView {
                ZStack{
-                   Color("ColorRec 1")
+                   Color("Color")
                        .ignoresSafeArea(.all)
                    VStack{
                        TextField(" Title ", text: $text1)
@@ -30,7 +30,7 @@ struct CustomReminder: View {
                            .foregroundColor(.white)
                            .background(Color.white.opacity(0.2).cornerRadius(15))
                            .font(.headline)
-                       
+
                            .padding()
                        TextField(" Note ", text: $text2 )
                            .padding()
@@ -52,7 +52,8 @@ struct CustomReminder: View {
                       
                        .padding(.trailing,250)
                        .accentColor(Color.blue)
-                       .colorMultiply(.black)
+                       .colorMultiply(.white)
+                       .environment(\.colorScheme, .dark)
                        .datePickerStyle(CompactDatePickerStyle())
                        
                        
@@ -121,32 +122,31 @@ struct CustomReminder: View {
                    .padding()
 
                    }
-                   
-                   
-                   .navigationBarTitle("Set New Reminder ")
-                               
-                                      .navigationBarTitleDisplayMode(.inline)
+               
                                       .toolbar {
-                                          ToolbarItem(placement: .cancellationAction) {
-                                              Button(action: {
-                                                  self.presentationMode.wrappedValue.dismiss()
-                                              }) {
-                                                  Text("Cancel")
-                                                      .foregroundColor(.black)
-                                              }
-                                          }
-
                                           ToolbarItem(placement: .confirmationAction) {
-                                              Button(action: {
-                                                  // Save your data here
+                                              HStack{
+                                                  Button(action: {
+                                                      
+                                                  }) {
+                                                      Text("    Add ")
+                                                          .foregroundColor(.white)
+                                                          .padding(.leading,-110)
+                                                  }
 
-                                              }) {
-                                                  Text("Add")
-                                                      .foregroundColor(.black)
+                                                  Text(" Set New Reminder   ").font(.headline).foregroundColor(Color.white)
+                                                      .padding(.trailing,30)
+                                                  Button(action: {
+                                                      // Save your data here
+                                                      self.presentationMode.wrappedValue.dismiss()
+
+                                                  }) {
+                                                      Text("Cancel")
+                                                          .foregroundColor(.white)
+                                                  }
+                                                  
                                               }
-                                           
-                                          }
-               }
+                                          }                 }
                
                                          }
            }

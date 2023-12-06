@@ -16,9 +16,9 @@ struct CarInfo {
 //    }
 //    var numberOfCylinders: EngineType
     var carModel: String = "X"
-    var odometerReading: String = "0.0"
-    var dailyKilometersDriven: String = "100"
-    var oilTypeBrand: String = "Oil Type :"
+    var odometerReading: Int = 0
+    var dailyKilometersDriven: Int = 0
+    var oilTypeBrand: String = "Oil Type "
     
     
 }
